@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController">
+
+    <!-- HEADER -->
+    <top>
+        <Label text="📚 Gestor de Biblioteca"
+               styleClass="header"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- LEFT FORM -->
+    <left>
+        <VBox spacing="10" styleClass="form-box">
+
+            <Label text="Datos del Libro" styleClass="title"/>
+
+            <TextField fx:id="isbnField" promptText="ISBN"/>
+            <TextField fx:id="tituloField" promptText="Título"/>
+            <TextField fx:id="autorField" promptText="Autor"/>
+
+            <Button text="Agregar" onAction="#agregarLibro"/>
+            <Button text="Editar" onAction="#editarLibro"/>
+            <Button text="Eliminar" onAction="#eliminarLibro"/>
+
+        </VBox>
+    </left>
+
+    <!-- CENTER TABLE -->
+    <center>
+        <VBox spacing="10" styleClass="table-box">
+
+            <Label text="Lista de Libros" styleClass="title"/>
+
+            <TableView fx:id="tablaLibros">
+
+                <columns>
+                    <TableColumn fx:id="colIsbn" text="ISBN" prefWidth="120"/>
+                    <TableColumn fx:id="colTitulo" text="Título" prefWidth="180"/>
+                    <TableColumn fx:id="colAutor" text="Autor" prefWidth="150"/>
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>

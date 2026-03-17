@@ -17,8 +17,8 @@ public class Library {
     }
 
     //Read
-    public Book getBook(String isbn) {
-        return books.get(isbn);
+    public Book getBook() {
+        return books.get(books.keySet().iterator().next());
     }
 
     //Update
